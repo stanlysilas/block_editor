@@ -53,4 +53,29 @@ abstract class BlockPlugin {
   /// Built-in plugins return fixed group names. External plugins return
   /// their chosen group name.
   String? slashCommandGroup() => null;
+
+  /// Returns a plain-text representation of [node] for use by
+  /// [PlainTextExporter], or null to use the exporter's default rendering
+  /// for this block type.
+  ///
+  /// Implement this method when the default plain-text fallback — which
+  /// uses [BlockNode.delta] plain text — does not produce adequate output
+  /// for your block type. Return null to accept the default.
+  String? exportAsPlainText(BlockNode node) => null;
+
+  /// Returns a Markdown representation of [node] for use by
+  /// [MarkdownExporter], or null to use the exporter's default rendering
+  /// for this block type.
+  ///
+  /// Return null to accept the default Markdown rendering. Implement this
+  /// when your block type requires custom Markdown output that the default
+  /// delta-to-Markdown conversion cannot produce.
+  String? exportAsMarkdown(BlockNode node) => null;
+
+  /// Returns an HTML fragment representing [node] for use by [HtmlExporter],
+  /// or null to use the exporter's default rendering for this block type.
+  ///
+  /// The returned string should be a complete HTML element with no surrounding
+  /// whitespace. Return null to accept the default HTML rendering.
+  String? exportAsHtml(BlockNode node) => null;
 }

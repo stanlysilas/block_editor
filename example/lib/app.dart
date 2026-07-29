@@ -17,7 +17,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  ThemeMode _themeMode = ThemeMode.light;
+  ThemeMode _themeMode = ThemeMode.system;
 
   void _toggleTheme() {
     setState(() {

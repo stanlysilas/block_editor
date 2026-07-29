@@ -299,7 +299,6 @@ class _BulletListWidgetState extends State<BulletListWidget> {
     return Padding(
       padding: EdgeInsets.only(left: indent * 24.0),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
             width: 24,
@@ -381,7 +380,6 @@ class _NumberedListWidgetState extends State<NumberedListWidget> {
     return Padding(
       padding: EdgeInsets.only(left: indent * 24.0),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             width: 24,

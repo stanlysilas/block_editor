@@ -398,6 +398,33 @@ final class BlockController {
     return result;
   }
 
+  /// Exports this controller's document using [exporter] and returns the
+  /// result as a [String].
+  ///
+  /// This is a convenience wrapper over [BlockDocumentExporter.export].
+  /// The document is not modified.
+  ///
+  /// ```dart
+  /// final markdown = await controller.exportAs(MarkdownExporter());
+  /// ```
+  Future<String> exportAs(BlockDocumentExporter exporter) =>
+      exporter.export(_document);
+
+  /// Replaces this controller's document with the result of parsing [source]
+  /// using [importer].
+  ///
+  /// An undo snapshot is pushed before the replacement so the import
+  /// operation is undoable via [undo]. This is consistent with
+  /// [replaceDocument].
+  ///
+  /// ```dart
+  /// await controller.importFrom(MarkdownImporter(), markdownString);
+  /// ```
+  Future<void> importFrom(BlockDocumentImporter importer, String source) async {
+    final imported = await importer.import(source);
+    replaceDocument(imported);
+  }
+
   /// Releases all stream resources.
   ///
   /// Call when the controller is no longer needed.

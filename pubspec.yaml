@@ -65,3 +65,5 @@ melos:
     lint:
       run: melos run analyze && melos run format
       description: Run both analyzer and format checks. Used as the single lint gate in CI.
+dependencies:
+  video_player: ^2.11.1

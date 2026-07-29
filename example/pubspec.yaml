@@ -2,7 +2,7 @@ name: block_editor_example
 description: Example application for the block_editor package.
 publish_to: none
 resolution: workspace
-version: 0.0.2-dev.2
+version: 0.0.4-dev.1
 
 environment:
   sdk: ">=3.11.0 <4.0.0"

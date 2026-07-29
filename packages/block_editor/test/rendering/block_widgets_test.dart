@@ -168,7 +168,7 @@ void main() {
           ),
         ),
       );
-      await tester.tapAt(const Offset(200, 10));
+      await tester.tap(find.byType(RichTextRenderer));
       expect(received, isA<TapEvent>());
     });
   });
@@ -221,7 +221,7 @@ void main() {
           ),
         ),
       );
-      await tester.tapAt(const Offset(200, 10));
+      await tester.tap(find.byType(RichTextRenderer));
       expect(received, isA<TapEvent>());
     });
   });

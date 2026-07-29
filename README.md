@@ -81,7 +81,7 @@ melos run lint
 | 2 | Rendering Engine | ✅ Complete |
 | 3 | Block Plugin System | ✅ Complete |
 | 4 | Toolbar & Commands | ✅ Complete |
-| 5 | Export & Import | ⏳ Pending |
+| 5 | Export & Import | 🚧 In progress |
 | 6 | Differentiating Features | ⏳ Pending |
 | 7 | Polish & Release | ⏳ Pending |
 

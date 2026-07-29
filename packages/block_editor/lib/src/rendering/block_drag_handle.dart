@@ -63,32 +63,33 @@ class _BlockDragHandleState extends State<BlockDragHandle> {
     final availableWidth = MediaQuery.of(context).size.width;
     final tooNarrow = availableWidth < 600;
 
-    if (widget.readOnly || tooNarrow) {
-      return widget.child;
-    }
-
-    final handleIcon = MouseRegion(
-      onEnter: (_) => setState(() => _hovering = true),
-      onExit: (_) => setState(() => _hovering = false),
-      cursor: SystemMouseCursors.grab,
-      child: Draggable<int>(
-        data: widget.index,
-        feedback: widget.feedbackWidget,
-        child: GestureDetector(
-          onTapUp: widget.onActionMenuRequested != null
-              ? (details) => widget.onActionMenuRequested!(
-                  widget.blockId,
-                  details.globalPosition,
-                )
-              : null,
-          child: AnimatedOpacity(
-            opacity: _hovering ? 1.0 : 0.0,
-            duration: const Duration(milliseconds: 150),
-            child: const Icon(Icons.drag_indicator, color: Color(0xFF999999)),
-          ),
-        ),
-      ),
-    );
+    final handleIcon = (widget.readOnly || tooNarrow)
+        ? const SizedBox(width: 24)
+        : MouseRegion(
+            onEnter: (_) => setState(() => _hovering = true),
+            onExit: (_) => setState(() => _hovering = false),
+            cursor: SystemMouseCursors.grab,
+            child: Draggable<int>(
+              data: widget.index,
+              feedback: widget.feedbackWidget,
+              child: GestureDetector(
+                onTapUp: widget.onActionMenuRequested != null
+                    ? (details) => widget.onActionMenuRequested!(
+                        widget.blockId,
+                        details.globalPosition,
+                      )
+                    : null,
+                child: AnimatedOpacity(
+                  opacity: _hovering ? 1.0 : 0.0,
+                  duration: const Duration(milliseconds: 150),
+                  child: const Icon(
+                    Icons.drag_indicator,
+                    color: Color(0xFF999999),
+                  ),
+                ),
+              ),
+            ),
+          );
 
     return Row(
       key: _rowKey,

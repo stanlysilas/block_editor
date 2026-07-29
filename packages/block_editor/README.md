@@ -5,19 +5,19 @@ No dependency on AppFlowy, flutter_quill, super_editor, or any existing editor p
 
 ## Status
 
-Pre-release (`0.0.3-dev.1`) — the public API is available and documented but **breaking changes will occur** in future pre-release versions before `1.0.0`. Do not use in production applications yet.
+Pre-release (`0.0.4-dev.1`) — the public API is available and documented but **breaking changes will occur** in future pre-release versions before `1.0.0`. Do not use in production applications yet.
 
 ## Installation
 
 ```yaml
 dependencies:
-  block_editor: ^0.0.3-dev.1
+  block_editor: ^0.0.4-dev.1
 ```
 
 Since this is a pre-release version, you must explicitly request it:
 
 ```bash
-flutter pub add block_editor:0.0.3-dev.1
+flutter pub add block_editor:0.0.4-dev.1
 ```
 
 ---

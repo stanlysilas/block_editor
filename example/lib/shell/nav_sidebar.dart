@@ -90,7 +90,7 @@ class NavSidebar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
             child: Text(
-              'v0.0.2-dev.2',
+              'v0.0.4-dev.1',
               style: TextStyle(
                 color: colors.textMuted,
                 fontSize: 11,

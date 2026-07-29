@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../shell/export_modal.dart';
 import '../theme/app_theme.dart';
-import '../utils/markdown_exporter.dart';
+import '../utils/markdown_exporter.dart' as md;
 import 'editor_top_bar.dart';
 import 'tag_strip.dart';
 
@@ -42,7 +42,7 @@ class _EditorSectionState extends State<EditorSection> {
   static const Map<String, String> _variables = {
     'authorName': 'Stanly Silas',
     'packageName': 'block_editor',
-    'version': '0.1.0',
+    'version': '0.0.4-dev.1',
   };
 
   @override
@@ -118,7 +118,7 @@ class _EditorSectionState extends State<EditorSection> {
   }
 
   void _exportMarkdown() {
-    final markdown = MarkdownExporter.export(_controller.document);
+    final markdown = md.MarkdownExporter.export(_controller.document);
     ExportModal.show(context, title: 'Export Markdown', content: markdown);
   }
 

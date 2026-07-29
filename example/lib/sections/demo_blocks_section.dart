@@ -30,7 +30,7 @@ class _DemoBlocksSectionState extends State<DemoBlocksSection> {
   static const Map<String, String> _variables = {
     'authorName': 'Stanly Silas',
     'packageName': 'block_editor',
-    'version': '0.1.0',
+    'version': '0.0.4-dev.1',
   };
 
   @override

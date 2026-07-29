@@ -94,7 +94,7 @@ void main() {
       await tester.pump();
 
       final MaterialApp appBefore = tester.widget(find.byType(MaterialApp));
-      expect(appBefore.themeMode, ThemeMode.light);
+      expect(appBefore.themeMode, ThemeMode.system);
 
       await tester.tap(find.byTooltip('Switch to dark mode'));
       await tester.pump(const Duration(milliseconds: 500));
